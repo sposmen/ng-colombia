@@ -3,7 +3,9 @@
 >
   <div class="search">
     <label>{{label}}</label>
-    <input #search_box type="text" (keyup)="search($event)" class="input" (focus)="focusElement=true">
+    <input #search_box type="text"
+           (focus)="focusElement=true"
+           (keyup)="search($event)" class="input">
 
   </div>
 </div>

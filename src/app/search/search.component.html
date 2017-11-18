@@ -3,9 +3,12 @@
   <input type="text" formControlName="from">
   <input type="text" formControlName="to">
 
+  <input type="text" formControlName="passengers" disabled>
+
+  <button (click)="changePassengers(1)">+</button>
+  <button (click)="changePassengers(-1)">-</button>
+
   <app-citi-search label="Desde" (onSelect)="selection('from',$event)"></app-citi-search>
-
-
 
   <app-citi-search label="A" (onSelect)="selection('to',$event)"></app-citi-search>
 

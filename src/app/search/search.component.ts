@@ -26,8 +26,16 @@ export class SearchComponent implements OnInit {
   createForm() {
     this.searchForm = this.fb.group({
       from: ['', Validators.required],
-      to: ['', Validators.required]
+      to: ['', Validators.required],
+      passengers: [1, Validators.required]
     });
+  }
+
+  changePassengers(step: Number) {
+    const temp = parseInt(this.searchForm.value['passengers']) + step;
+    if (temp > 0) {
+      this.searchForm.patchValue({passengers: temp});
+    }
   }
 
   ngOnInit() {
