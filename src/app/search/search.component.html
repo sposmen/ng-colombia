@@ -1,0 +1,18 @@
+<form [formGroup]="searchForm" novalidate>
+
+  <input type="text" formControlName="from">
+  <input type="text" formControlName="to">
+
+  <app-citi-search label="Desde" (onSelect)="selection('from',$event)"></app-citi-search>
+
+
+
+  <app-citi-search label="A" (onSelect)="selection('to',$event)"></app-citi-search>
+
+  <div class="actions">
+    <button [disabled]="searchForm.invalid">Enviar</button>
+  </div>
+
+  <p>Form Value : {{searchForm.value | json}}</p>
+  <p>Form Valid : {{searchForm.invalid | json}}</p>
+</form>
